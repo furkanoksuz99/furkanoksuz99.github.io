@@ -4,156 +4,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Furkan Öksüz - Portföy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> <!-- FontAwesome için -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --accent: #ff8c42;
-      --bg-dark: #1e1e2f;
-      --bg-light: #2e2e3e;
-      --text-light: #e0e0e0;
-      --text-muted: #c0c0c0;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --bg: #2f2f2f;          
+      --card-bg: #3a3a3a;     
+      --text: #d0d0d0;        
+      --heading: #f0f0f0;     
+      --accent: #8c8c8c;       
+      --accent-hover: #bfbfbf; 
     }
 
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      background: var(--bg-light);
-      border-bottom: 1px solid #444;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: white;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: var(--text-muted);
-    }
-
-    .social-links {
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      color: var(--text-light);
-      margin: 0 10px;
-      font-size: 1.8rem;
-      text-decoration: none;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .social-links a:hover {
-      color: var(--accent);
-      transform: scale(1.2);
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 30px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--accent);
-      text-align: center;
-    }
-
-    #projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .project-card {
-      background: var(--bg-light);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
+    header {
+      text-align: center;
+      background: #292929;
+      padding: 50px 20px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--heading);
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .social-links {
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      color: var(--accent);
+      margin: 0 15px;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-hover);
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 960px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    section {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 30px;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 10px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      user-select: none;
+    }
+
+    #about p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--text);
+      user-select: text;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      justify-content: center;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 22px 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transform: translateY(-7px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
 
     .project-card h3 {
+      font-size: 1.5rem;
       color: var(--accent);
-      font-size: 1.3rem;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-weight: 700;
     }
 
     .project-card p {
-      font-size: 0.95rem;
-      color: #ccc;
       flex-grow: 1;
-      margin-bottom: 15px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: var(--text);
+      user-select: text;
     }
 
     .project-card a {
       text-decoration: none;
       background-color: var(--accent);
-      color: white;
-      padding: 10px;
-      border-radius: 6px;
+      color: var(--bg);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-radius: 8px;
       text-align: center;
-      font-weight: 600;
       transition: background-color 0.3s ease;
+      user-select: none;
     }
 
     .project-card a:hover {
-      background-color: #d46a19;
+      background-color: var(--accent-hover);
+      color: var(--bg);
     }
 
     footer {
+      background-color: #292929;
+      color: var(--accent);
       text-align: center;
-      padding: 25px 10px;
-      background-color: var(--bg-light);
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-top: 80px;
+      padding: 25px 20px;
+      font-size: 0.95rem;
+      border-top: 1px solid #444;
+      user-select: none;
     }
 
     footer a {
-      color: #aaa;
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
-      color: var(--accent);
+      color: var(--accent-hover);
     }
 
     @media (max-width: 480px) {
       header h1 {
         font-size: 2rem;
       }
-
       section h2 {
+        font-size: 1.8rem;
+      }
+      .social-links a {
         font-size: 1.5rem;
+        margin: 0 10px;
       }
     }
   </style>
@@ -163,14 +192,14 @@
   <header>
     <h1>Furkan Öksüz</h1>
     <p>Veri Analisti • Yazılım Geliştirici • İstatistik Öğrencisi</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/furkanoksuz99" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
+    <div class="social-links" aria-label="Sosyal Medya Bağlantıları">
+      <a href="https://www.linkedin.com/in/furkanoksuz99" target="_blank" aria-label="LinkedIn" rel="noopener">
+        <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://github.com/furkanoksuz99" target="_blank" title="GitHub">
+      <a href="https://github.com/furkanoksuz99" target="_blank" aria-label="GitHub" rel="noopener">
         <i class="fab fa-github"></i>
       </a>
-      <a href="mailto:furkanoksuz987@gmail.com" title="E-posta">
+      <a href="mailto:furkanoksuz987@gmail.com" aria-label="E-posta">
         <i class="fas fa-envelope"></i>
       </a>
     </div>
@@ -180,43 +209,40 @@
     <section id="about">
       <h2>Hakkımda</h2>
       <p>
-        Merhaba! Ben Furkan Öksüz. Dokuz Eylül Üniversitesi'nde <strong>Bilgisayar Programcılığı</strong> okudum. Şu anda Gazi Üniversitesi'nde <strong>İstatistik</strong> bölümünde öğrenimime devam ediyorum. 
-        Veri analizi, yapay zeka ve yazılım geliştirme alanlarına büyük bir ilgi duyuyorum. Projelerimde genellikle Python, C# ve SQL teknolojilerini kullanıyorum. 
-        Hedefim, veriyi anlamlandırarak insanların hayatını kolaylaştıran sistemler geliştirmek.
+        Merhaba! Ben Furkan Öksüz. Dokuz Eylül Üniversitesi'nde <strong>Bilgisayar Programcılığı</strong> okudum, şu anda Gazi Üniversitesi <strong>İstatistik</strong> bölümünde öğrenciyim.<br>
+        Veri analizi, yazılım geliştirme ve yapay zekaya tutkuyla bağlıyım. Python, C#, SQL gibi teknolojileri aktif olarak kullanıyorum.<br>
+        Hedefim, veriyi anlamlandıran ve hayatı kolaylaştıran çözümler üretmek.
       </p>
     </section>
 
     <section id="projects">
       <h2>Projelerim</h2>
-
-      <div class="project-card">
-        <h3>Sağlık Asistan Botu</h3>
-        <p>Python ile geliştirilen, sağlık sorularına doğal dil işleme ile yanıt veren yapay zeka destekli sohbet botu.</p>
-        <a href="https://github.com/furkanoksuz99/health_assistant" target="_blank">GitHub'da Görüntüle</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Hava Durumu Tahmin Uygulaması</h3>
-        <p>Kullanıcıların şehir seçerek günlük ve haftalık hava durumu tahminlerini grafiklerle görebileceği Python tabanlı uygulama.</p>
-        <a href="https://github.com/furkanoksuz99/weather_forecast" target="_blank">GitHub'da Görüntüle</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Hastane Randevu Sistemi</h3>
-        <p>C# Windows Forms ile geliştirilen, hasta ve doktor için kolay kullanım sağlayan randevu yönetim uygulaması.</p>
-        <a href="https://github.com/furkanoksuz99/HastaneRandevuSistemi" target="_blank">GitHub'da Görüntüle</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Öğrenci Bilgi Yönetim Sistemi</h3>
-        <p>Öğrencilerin ders ve not bilgilerinin yönetimini sağlayan, kullanıcı dostu masaüstü yazılım çözümü (C#).</p>
-        <a href="https://github.com/furkanoksuz99/student_information_management_system" target="_blank">GitHub'da Görüntüle</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Toplumsal Kriz Algısı Modeli</h3>
-        <p>Sosyal medya metinleri üzerinden kriz algısını analiz eden, istatistiksel ve NLP tekniklerini kullanan proje.</p>
-        <a href="https://github.com/furkanoksuz99/kriz_algisi_modeli" target="_blank">GitHub'da Görüntüle</a>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Sağlık Asistan Botu</h3>
+          <p>Sağlık sorularını yanıtlayan yapay zeka destekli sohbet botu (Python).</p>
+          <a href="https://github.com/furkanoksuz99/health_assistant" target="_blank" rel="noopener noreferrer">GitHub'da Görüntüle</a>
+        </div>
+        <div class="project-card">
+          <h3>Hava Durumu Tahmin</h3>
+          <p>7 günlük hava durumu tahmini yapan Python tabanlı uygulama.</p>
+          <a href="https://github.com/furkanoksuz99/weather_forecast" target="_blank" rel="noopener noreferrer">GitHub'da Görüntüle</a>
+        </div>
+        <div class="project-card">
+          <h3>Hastane Randevu Sistemi</h3>
+          <p>C# ile geliştirilen kullanıcı dostu masaüstü randevu sistemi.</p>
+          <a href="https://github.com/furkanoksuz99/HastaneRandevuSistemi" target="_blank" rel="noopener noreferrer">GitHub'da Görüntüle</a>
+        </div>
+        <div class="project-card">
+          <h3>Öğrenci Bilgi Yönetimi</h3>
+          <p>Öğrenci-ders-not bilgilerini yöneten C# Windows Forms projesi.</p>
+          <a href="https://github.com/furkanoksuz99/student_information_management_system" target="_blank" rel="noopener noreferrer">GitHub'da Görüntüle</a>
+        </div>
+        <div class="project-card">
+          <h3>Kriz Algısı Modeli</h3>
+          <p>Sosyal medya metinlerinden kriz algısını tahmin eden NLP projesi.</p>
+          <a href="https://github.com/furkanoksuz99/kriz_algisi_modeli" target="_blank" rel="noopener noreferrer">GitHub'da Görüntüle</a>
+        </div>
       </div>
     </section>
   </main>
